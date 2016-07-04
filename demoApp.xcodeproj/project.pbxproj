@@ -7,21 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A6C9A8B1D218A290032E078 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C9A8A1D218A290032E078 /* AppDelegate.swift */; };
-		3A6C9A8D1D218A2A0032E078 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C9A8C1D218A2A0032E078 /* ViewController.swift */; };
+		3A0E36BD1D26AB1400611F8A /* DALoginRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0E36BC1D26AB1400611F8A /* DALoginRegisterViewModel.swift */; };
+		3A0E36C01D26CF2300611F8A /* DAConstaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0E36BF1D26CF2300611F8A /* DAConstaint.swift */; };
 		3A6C9A901D218A2A0032E078 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6C9A8E1D218A2A0032E078 /* Main.storyboard */; };
 		3A6C9A921D218A2A0032E078 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A6C9A911D218A2A0032E078 /* Assets.xcassets */; };
 		3A6C9A951D218A2A0032E078 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6C9A931D218A2A0032E078 /* LaunchScreen.storyboard */; };
+		3A6C9AA11D218ABB0032E078 /* DALoginRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C9A9F1D218ABB0032E078 /* DALoginRegisterVC.swift */; };
+		3A6C9AA31D218ACF0032E078 /* DAAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C9AA21D218ACF0032E078 /* DAAppDelegate.swift */; };
+		3A6C9AA61D21921C0032E078 /* DATextFieldTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C9AA51D21921C0032E078 /* DATextFieldTVC.swift */; };
+		3A6C9AA81D2194360032E078 /* DASubmitBtnTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C9AA71D2194360032E078 /* DASubmitBtnTVC.swift */; };
+		3A74B6A11D27A3A4002916AA /* DAImageViewTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A74B6A01D27A3A4002916AA /* DAImageViewTVC.swift */; };
+		3A74B6A31D27C637002916AA /* DACommonMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A74B6A21D27C637002916AA /* DACommonMethod.swift */; };
+		3A74B6A51D27CE10002916AA /* DAExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A74B6A41D27CE10002916AA /* DAExtension.swift */; };
+		3A74B6B21D27FE49002916AA /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A74B6AE1D27FE3E002916AA /* Realm.framework */; };
+		3A74B6B41D27FE49002916AA /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A74B6AF1D27FE3E002916AA /* RealmSwift.framework */; };
+		3A74B6B71D27FF6A002916AA /* DAUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A74B6B61D27FF6A002916AA /* DAUserModel.swift */; };
+		3A74B6B91D2800AB002916AA /* DARealmUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A74B6B81D2800AB002916AA /* DARealmUserModel.swift */; };
+		3A74B6BA1D28041F002916AA /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A74B6AE1D27FE3E002916AA /* Realm.framework */; };
+		3A74B6BB1D28041F002916AA /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A74B6AE1D27FE3E002916AA /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3A74B6BC1D28041F002916AA /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A74B6AF1D27FE3E002916AA /* RealmSwift.framework */; };
+		3A74B6BD1D28041F002916AA /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A74B6AF1D27FE3E002916AA /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3AA1EBCC1D2A7E1D0037415E /* DAUserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1EBCB1D2A7E1D0037415E /* DAUserListVC.swift */; };
+		3AA1EBCE1D2A7E810037415E /* DAUserListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1EBCD1D2A7E810037415E /* DAUserListCVC.swift */; };
+		B531D8712282C7CD497D1F1E /* Pods_demoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 445554AB6140778D80193041 /* Pods_demoApp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3A74B6BE1D28041F002916AA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3A74B6BD1D28041F002916AA /* RealmSwift.framework in Embed Frameworks */,
+				3A74B6BB1D28041F002916AA /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0E2A8BA0EDDA734020EE981B /* Pods-demoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-demoApp/Pods-demoApp.release.xcconfig"; sourceTree = "<group>"; };
+		3A0E36BC1D26AB1400611F8A /* DALoginRegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DALoginRegisterViewModel.swift; sourceTree = "<group>"; };
+		3A0E36BF1D26CF2300611F8A /* DAConstaint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAConstaint.swift; sourceTree = "<group>"; };
 		3A6C9A871D218A290032E078 /* demoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A6C9A8A1D218A290032E078 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3A6C9A8C1D218A2A0032E078 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A6C9A8F1D218A2A0032E078 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A6C9A911D218A2A0032E078 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A6C9A941D218A2A0032E078 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A6C9A961D218A2A0032E078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A6C9A9F1D218ABB0032E078 /* DALoginRegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DALoginRegisterVC.swift; sourceTree = "<group>"; };
+		3A6C9AA21D218ACF0032E078 /* DAAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAAppDelegate.swift; sourceTree = "<group>"; };
+		3A6C9AA51D21921C0032E078 /* DATextFieldTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DATextFieldTVC.swift; sourceTree = "<group>"; };
+		3A6C9AA71D2194360032E078 /* DASubmitBtnTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DASubmitBtnTVC.swift; sourceTree = "<group>"; };
+		3A74B6A01D27A3A4002916AA /* DAImageViewTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAImageViewTVC.swift; sourceTree = "<group>"; };
+		3A74B6A21D27C637002916AA /* DACommonMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACommonMethod.swift; sourceTree = "<group>"; };
+		3A74B6A41D27CE10002916AA /* DAExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAExtension.swift; sourceTree = "<group>"; };
+		3A74B6AE1D27FE3E002916AA /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		3A74B6AF1D27FE3E002916AA /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		3A74B6B61D27FF6A002916AA /* DAUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAUserModel.swift; sourceTree = "<group>"; };
+		3A74B6B81D2800AB002916AA /* DARealmUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DARealmUserModel.swift; sourceTree = "<group>"; };
+		3AA1EBCB1D2A7E1D0037415E /* DAUserListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAUserListVC.swift; sourceTree = "<group>"; };
+		3AA1EBCD1D2A7E810037415E /* DAUserListCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAUserListCVC.swift; sourceTree = "<group>"; };
+		445554AB6140778D80193041 /* Pods_demoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4899444C5D9B3AE191320F4F /* Pods-demoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-demoApp/Pods-demoApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +78,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A74B6BA1D28041F002916AA /* Realm.framework in Frameworks */,
+				3A74B6BC1D28041F002916AA /* RealmSwift.framework in Frameworks */,
+				3A74B6B21D27FE49002916AA /* Realm.framework in Frameworks */,
+				3A74B6B41D27FE49002916AA /* RealmSwift.framework in Frameworks */,
+				B531D8712282C7CD497D1F1E /* Pods_demoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A0E36BE1D26CEC000611F8A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3A0E36BF1D26CF2300611F8A /* DAConstaint.swift */,
+				3A74B6A21D27C637002916AA /* DACommonMethod.swift */,
+				3A74B6A41D27CE10002916AA /* DAExtension.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		3A6C9A7E1D218A290032E078 = {
 			isa = PBXGroup;
 			children = (
 				3A6C9A891D218A290032E078 /* demoApp */,
 				3A6C9A881D218A290032E078 /* Products */,
+				BFDC10437960E1C45A720F5D /* Pods */,
+				B39F3A3DF343C63F97BE1D91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +120,90 @@
 		3A6C9A891D218A290032E078 /* demoApp */ = {
 			isa = PBXGroup;
 			children = (
-				3A6C9A8A1D218A290032E078 /* AppDelegate.swift */,
-				3A6C9A8C1D218A2A0032E078 /* ViewController.swift */,
+				3A74B6AD1D27FE3E002916AA /* Realm */,
+				3A0E36BE1D26CEC000611F8A /* Helper */,
+				3A6C9A9C1D218ABB0032E078 /* Source */,
 				3A6C9A8E1D218A2A0032E078 /* Main.storyboard */,
 				3A6C9A911D218A2A0032E078 /* Assets.xcassets */,
 				3A6C9A931D218A2A0032E078 /* LaunchScreen.storyboard */,
 				3A6C9A961D218A2A0032E078 /* Info.plist */,
 			);
 			path = demoApp;
+			sourceTree = "<group>";
+		};
+		3A6C9A9C1D218ABB0032E078 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3A6C9AA21D218ACF0032E078 /* DAAppDelegate.swift */,
+				3A6C9A9D1D218ABB0032E078 /* Model */,
+				3A6C9A9E1D218ABB0032E078 /* ViewController */,
+				3A6C9AA01D218ABB0032E078 /* ViewModel */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		3A6C9A9D1D218ABB0032E078 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A74B6B61D27FF6A002916AA /* DAUserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A6C9A9E1D218ABB0032E078 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A6C9AA41D2191890032E078 /* Cell */,
+				3A6C9A9F1D218ABB0032E078 /* DALoginRegisterVC.swift */,
+				3AA1EBCB1D2A7E1D0037415E /* DAUserListVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3A6C9AA01D218ABB0032E078 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3A74B6B81D2800AB002916AA /* DARealmUserModel.swift */,
+				3A0E36BC1D26AB1400611F8A /* DALoginRegisterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3A6C9AA41D2191890032E078 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3A74B6A01D27A3A4002916AA /* DAImageViewTVC.swift */,
+				3A6C9AA51D21921C0032E078 /* DATextFieldTVC.swift */,
+				3A6C9AA71D2194360032E078 /* DASubmitBtnTVC.swift */,
+				3AA1EBCD1D2A7E810037415E /* DAUserListCVC.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3A74B6AD1D27FE3E002916AA /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				3A74B6AE1D27FE3E002916AA /* Realm.framework */,
+				3A74B6AF1D27FE3E002916AA /* RealmSwift.framework */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		B39F3A3DF343C63F97BE1D91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				445554AB6140778D80193041 /* Pods_demoApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFDC10437960E1C45A720F5D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4899444C5D9B3AE191320F4F /* Pods-demoApp.debug.xcconfig */,
+				0E2A8BA0EDDA734020EE981B /* Pods-demoApp.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +213,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A6C9A991D218A2A0032E078 /* Build configuration list for PBXNativeTarget "demoApp" */;
 			buildPhases = (
+				C0BF47714739303E38130046 /* 📦 Check Pods Manifest.lock */,
 				3A6C9A831D218A290032E078 /* Sources */,
 				3A6C9A841D218A290032E078 /* Frameworks */,
 				3A6C9A851D218A290032E078 /* Resources */,
+				0E6ABB2F11639A20E20973CB /* 📦 Embed Pods Frameworks */,
+				EC3B9E858654475D5C84CFBB /* 📦 Copy Pods Resources */,
+				3A74B6BE1D28041F002916AA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +276,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E6ABB2F11639A20E20973CB /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/myfile",
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-demoApp/Pods-demoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0BF47714739303E38130046 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EC3B9E858654475D5C84CFBB /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-demoApp/Pods-demoApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3A6C9A831D218A290032E078 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A6C9A8D1D218A2A0032E078 /* ViewController.swift in Sources */,
-				3A6C9A8B1D218A290032E078 /* AppDelegate.swift in Sources */,
+				3A6C9AA31D218ACF0032E078 /* DAAppDelegate.swift in Sources */,
+				3A74B6A11D27A3A4002916AA /* DAImageViewTVC.swift in Sources */,
+				3A6C9AA81D2194360032E078 /* DASubmitBtnTVC.swift in Sources */,
+				3A0E36C01D26CF2300611F8A /* DAConstaint.swift in Sources */,
+				3A74B6B91D2800AB002916AA /* DARealmUserModel.swift in Sources */,
+				3A0E36BD1D26AB1400611F8A /* DALoginRegisterViewModel.swift in Sources */,
+				3AA1EBCC1D2A7E1D0037415E /* DAUserListVC.swift in Sources */,
+				3A6C9AA11D218ABB0032E078 /* DALoginRegisterVC.swift in Sources */,
+				3A74B6A31D27C637002916AA /* DACommonMethod.swift in Sources */,
+				3A6C9AA61D21921C0032E078 /* DATextFieldTVC.swift in Sources */,
+				3A74B6B71D27FF6A002916AA /* DAUserModel.swift in Sources */,
+				3A74B6A51D27CE10002916AA /* DAExtension.swift in Sources */,
+				3AA1EBCE1D2A7E810037415E /* DAUserListCVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +455,15 @@
 		};
 		3A6C9A9A1D218A2A0032E078 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4899444C5D9B3AE191320F4F /* Pods-demoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/demoApp/Realm",
+					"\"$(SRCROOT)/demoApp/Realm/Realm.framework\"",
+				);
 				INFOPLIST_FILE = demoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.atApp.demoApp;
@@ -260,8 +473,15 @@
 		};
 		3A6C9A9B1D218A2A0032E078 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E2A8BA0EDDA734020EE981B /* Pods-demoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/demoApp/Realm",
+					"\"$(SRCROOT)/demoApp/Realm/RealmSwift.framework\"",
+				);
 				INFOPLIST_FILE = demoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.atApp.demoApp;
@@ -288,6 +508,7 @@
 				3A6C9A9B1D218A2A0032E078 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
