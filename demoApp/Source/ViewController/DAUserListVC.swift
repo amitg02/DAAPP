@@ -24,7 +24,7 @@ class DAUserListVC: UIViewController {
 	func SetInitalValue(){
 		 users = realmUserModel.fetchUserListsRealm()
 		userCollectionView.reloadData()
-		userCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+		userCollectionView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
 	}
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,7 +52,6 @@ extension DAUserListVC : UICollectionViewDataSource ,UICollectionViewDelegateFlo
 		if user.userImage.length != 0 {
 			cell.userImageView.image = UIImage(data:user.userImage,scale:1.0)
 		}
-		
 		cell.userNameLbl.text = user.userName
 		cell.userEmailLbl.text = "\(user.userEmail), \(user.userMobile)"
 		return cell

@@ -134,9 +134,10 @@ extension DALoginRegisterVC:UITableViewDataSource {
 		let (status,message,count,user) = daloginRegisterModelObject.submitBtnPressed(tableViewArr,screenType: screenType)
 		if  status {
 			print("VAlidationPass::\(user)")
-			let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DAUserListVC") as! DAUserListVC
-			let navigationController = UINavigationController(rootViewController: viewController)
-			self.presentViewController(navigationController, animated: true, completion: nil)
+			let storyboard = UIStoryboard(name: "Main", bundle: nil)
+			let vc = storyboard.instantiateViewControllerWithIdentifier("TabbarControllerID") as! UITabBarController
+			self.presentViewController(vc, animated: true, completion: nil)
+
 
 		} else {
 			if count == "NIL" {
