@@ -14,7 +14,7 @@ class DALoginRegisterViewModel: NSObject {
 	let realmUserModel = RealmUserModel()
 	var users : Results<DAUserModel>!
 	
-	func createTableDic(screenType:Int)->NSMutableArray {
+	func createTableDic(screenType:Int,userDic:DAUserModel?)->NSMutableArray {
 		let arr:NSMutableArray
 		if screenType == 2 {
 			let logoDic:NSMutableDictionary		= ["index":"0","cellType" : CellType.DAImageView.rawValue, "placeholderText" : " ","text":"","secureType":false,"keyboardType": "Default"]
@@ -25,6 +25,13 @@ class DALoginRegisterViewModel: NSObject {
 			let confirmPasswordDic:NSMutableDictionary = ["index":"5","cellType" : CellType.DATextField.rawValue, "placeholderText" : "Confirm Password","text":"","secureType":true,"keyboardType":"Default"]
 			let buttonDic:NSMutableDictionary	= ["index":"6","cellType" : CellType.DASubmitBtn.rawValue, "placeholderText" : " Register","text":"","secureType":false,"keyboardType":"Default","newUserBtnTitle":"Already have Account?"]
 		 arr = NSMutableArray(objects: logoDic,userNameDic,userMobileDic,emailDic,passwordDic,confirmPasswordDic,buttonDic)
+		}  else if screenType == 3 {
+			let logoDic:NSMutableDictionary		= ["index":"0","cellType" : CellType.DAImageView.rawValue, "placeholderText" : " ","text":(userDic?.userImage)!,"secureType":false,"keyboardType": "Default"]
+			let userNameDic:NSMutableDictionary	= ["index":"1","cellType" : CellType.DATextField.rawValue, "placeholderText" : "Name","text":(userDic?.userName)!,"secureType":false,"keyboardType":"Default"]
+			let userMobileDic:NSMutableDictionary	= ["index":"2","cellType" : CellType.DATextField.rawValue, "placeholderText" : "Mobile","text":(userDic?.userMobile)!,"secureType":false,"keyboardType":"PhonePad"]
+			let emailDic:NSMutableDictionary	= ["index":"3","cellType" : CellType.DATextField.rawValue, "placeholderText" : "Email","text":(userDic?.userEmail)!,"secureType":false,"keyboardType":"EmailAddress"]
+			let buttonDic:NSMutableDictionary	= ["index":"6","cellType" : CellType.DASubmitBtn.rawValue, "placeholderText" : " Update","text":"","secureType":false,"keyboardType":"Default","newUserBtnTitle":""]
+		 arr = NSMutableArray(objects: logoDic,userNameDic,userMobileDic,emailDic,buttonDic)
 		} else {
 			let logoDic:NSMutableDictionary		= ["index":"0","cellType" : CellType.DAImageView.rawValue, "placeholderText" : "","text":"","secureType":false,"keyboardType":"Default"]
 			let emailDic:NSMutableDictionary	= ["index":"1","cellType" : CellType.DATextField.rawValue, "placeholderText" : "Email","text":"amit4@gmail.com","secureType":false,"keyboardType":"Default"]
@@ -34,7 +41,7 @@ class DALoginRegisterViewModel: NSObject {
 		}
 		return arr
 	}
-	func submitBtnPressed(dataArr:NSMutableArray,screenType:Int)->(Bool,String,String,DAUserModel?){
+	func submitBtnPressed(dataArr:NSMutableArray,screenType:Int,userDic:DAUserModel?)->(Bool,String,String,DAUserModel?){
 		var returnTuple: (status: Bool, message: String)? = nil
 		let dataDic:NSMutableDictionary = NSMutableDictionary()
 		for dic in dataArr {
@@ -65,7 +72,7 @@ class DALoginRegisterViewModel: NSObject {
 						return (returnTuple!.status,returnTuple!.message,dic["index"] as! String,nil)
 				}
 			}
-			if screenType == 2 {
+			if screenType == 2  || screenType == 3 {
 			if dic["cellType"] as! String == "DAImageView" {
 				dataDic.setObject(dic["text"] as! NSData, forKey:"image")
 			}
@@ -78,6 +85,8 @@ class DALoginRegisterViewModel: NSObject {
 			} else {
 				return (status,message,"NIL",nil)
 			}
+		} else if screenType == 3 {
+			return updateUserRealm(dataDic,userDic: userDic!)
 		} else {
 			return fetchUserDetailsOnLogin(dataDic)
 		}
@@ -120,7 +129,25 @@ class DALoginRegisterViewModel: NSObject {
 		} else {
 			return (false,"Email alredy Exists","NIL",nil)
 		}
+	}
+	func updateUserRealm(dic:NSMutableDictionary,userDic:DAUserModel)->(Bool,String,String,DAUserModel?){
 		
+			// update mode
+		let userModel = DAUserModel()
+		userModel.userName     = dic.objectForKey("Name") as! String
+		userModel.userEmail	   = dic.objectForKey("Email") as! String
+		userModel.userMobile   = dic.objectForKey("Mobile") as! String
+		userModel.userImage    = dic.objectForKey("image") as! NSData
+		userModel.userPassword = userDic.userPassword
+
+		let (status,message) = self.realmUserModel.insertOrUpdateUserRealm(userDic,updateStatus:true,updatedUserModel:userModel)
+		if status {
+			let user = uiRealm.objectForPrimaryKey(DAUserModel.self, key: userModel.userID)
+			return (status,message,message,user)
+		} else {
+			return (status,message,message,nil)
+		}
+
 		
 	}
 

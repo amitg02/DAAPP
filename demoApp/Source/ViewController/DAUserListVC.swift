@@ -11,7 +11,7 @@ import RealmSwift
 
 class DAUserListVC: UIViewController {
 	
-	@IBOutlet weak var userCollectionView:UICollectionView!
+	@IBOutlet weak var userTableView:UITableView!
 	
 	var users : Results<DAUserModel>!
 	let realmUserModel = RealmUserModel()
@@ -23,43 +23,78 @@ class DAUserListVC: UIViewController {
     }
 	func SetInitalValue(){
 		 users = realmUserModel.fetchUserListsRealm()
-		userCollectionView.reloadData()
-		userCollectionView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+		userTableView.estimatedRowHeight = 44.0
+		userTableView.rowHeight = UITableViewAutomaticDimension
+		userTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+		userTableView.tableFooterView = UIView()
+	}
+	func reloadTable(){
+		users = realmUserModel.fetchUserListsRealm()
+		userTableView.reloadData()
+	}
+	func pushToEditMode(userToBeEdited:DAUserModel){
+		let storyboard = UIStoryboard(name: "Main", bundle: nil)
+		let vc = storyboard.instantiateViewControllerWithIdentifier("DALoginRegisterVC") as! DALoginRegisterVC
+		vc.screenType = 3
+		vc.userDic = userToBeEdited
+		self.navigationController!.pushViewController(vc, animated: true)
+		
 	}
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
-extension DAUserListVC : UICollectionViewDelegate{
-	func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-	}
-}
-extension DAUserListVC : UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
-	
-	func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int{
+extension DAUserListVC:UITableViewDataSource {
+	// DataSource
+	func numberOfSectionsInTableView(tableview: UITableView) -> Int {
 		return 1
 	}
-	func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		print("users.count:\(users.count)")
+	
+	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return users.count
 	}
-	func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
-		
-		let reuseIdentifier = "userList"
-		let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! DAUserListCVC
+	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCellWithIdentifier(DAUserListTVC.DATableViewCellIdentifier, forIndexPath: indexPath) as! DAUserListTVC
 		let user = users[indexPath.row]
 		if user.userImage.length != 0 {
 			cell.userImageView.image = UIImage(data:user.userImage,scale:1.0)
 		}
 		cell.userNameLbl.text = user.userName
 		cell.userEmailLbl.text = "\(user.userEmail), \(user.userMobile)"
-		return cell
-	}
-	func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 		
-		return CGSizeMake(UIScreen.mainScreen().bounds.width, 80)
+		return cell
+		
+	}
+	func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+		return true
+	}
 	
+	func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+		// Okie dokie
+	}
+
+	func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+		let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Destructive, title: "Delete") { (deleteAction, indexPath) -> Void in
+			let userToBeDeleted = self.users[indexPath.row]
+			self.realmUserModel.deleteUserRealm(userToBeDeleted)
+			self.reloadTable()
+		}
+		let editAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Edit") { (editAction, indexPath) -> Void in
+			let userToBeUpdated = self.users[indexPath.row]
+			self.pushToEditMode(userToBeUpdated)
+//self.dispalyAlertViewForUser(userToBeUpdated)
+		}
+		return [deleteAction, editAction]
+	}
+ 
+	
+	
+}
+extension DAUserListVC:UITableViewDelegate{
+	// Delegate
+	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		
 	}
 	
 }

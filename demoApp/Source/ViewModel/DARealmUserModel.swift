@@ -18,15 +18,16 @@ class RealmUserModel:NSObject{
       let updatedUser = DAUserModel()
         updatedUser.userEmail    = userModel.userEmail
         updatedUser.userName     = userModel.userName
-        updatedUser.userID       = userModel.userID
 		updatedUser.userMobile   = userModel.userMobile
-		updatedUser.userPassword = userModel.userPassword
 		updatedUser.userImage    = userModel.userImage
+		updatedUser.userPassword = userModel.userPassword
+
       do {
         try uiRealm.write({ () -> Void in
           userModel.userName	 = updatedUserModel.userName
           userModel.userEmail	 = updatedUserModel.userEmail
 		  userModel.userMobile	 = updatedUserModel.userMobile
+		  userModel.userImage    = updatedUserModel.userImage
 		  userModel.userPassword = updatedUserModel.userPassword
           })
       }catch {

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DAUserListCVC: UICollectionViewCell {
+class DAUserListTVC: UITableViewCell {
 	@IBOutlet weak var userImageView: UIImageView!
 	@IBOutlet weak var userNameLbl: UILabel!
 	@IBOutlet weak var userEmailLbl: UILabel!
-	static let DACollectionViewCellIdentifier:String = "userList"
+	static let DATableViewCellIdentifier:String = "userList"
 }

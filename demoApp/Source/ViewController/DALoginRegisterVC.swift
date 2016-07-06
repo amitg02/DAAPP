@@ -15,7 +15,8 @@ class DALoginRegisterVC: UIViewController,UIImagePickerControllerDelegate,UINavi
 	let daloginRegisterModelObject = DALoginRegisterViewModel()
 	
 	var tableViewArr:NSMutableArray = NSMutableArray()
-	var screenType:Int = Int()
+	var screenType:Int = 1
+	var userDic:DAUserModel =  DAUserModel()
 	let imagePicker = UIImagePickerController()
 	
 	override func viewDidLoad() {
@@ -24,8 +25,11 @@ class DALoginRegisterVC: UIViewController,UIImagePickerControllerDelegate,UINavi
 				// Do any additional setup after loading the view, typically from a nib.
 	}
 	func SetInitalValue(){
-		screenType = 1
-		tableViewArr = daloginRegisterModelObject.createTableDic(screenType)
+		if screenType == 3 {
+			tableViewArr = daloginRegisterModelObject.createTableDic(screenType,userDic: userDic)
+		} else {
+		tableViewArr = daloginRegisterModelObject.createTableDic(screenType,userDic: nil)
+		}
 		tableview.estimatedRowHeight = 44.0
 		tableview.rowHeight = UITableViewAutomaticDimension
 		tableview.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
@@ -69,10 +73,13 @@ extension DALoginRegisterVC:UITableViewDataSource {
 		switch  dic["cellType"] as! String {
 		case  CellType.DAImageView.rawValue :
 			let imageViewCell = tableView.dequeueReusableCellWithIdentifier(DAImageViewTVC.DAImageViewCellIdentifier, forIndexPath: indexPath) as! DAImageViewTVC
-			if screenType == 2 {
-				imageViewCell.logoImageView.userInteractionEnabled = true
-			}else {
+			if screenType == 1 {
 				imageViewCell.logoImageView.userInteractionEnabled = false
+			}else {
+				imageViewCell.logoImageView.userInteractionEnabled = true
+			}
+			if screenType == 3 {
+				imageViewCell.logoImageView.image = UIImage(data:dic["text"] as! NSData, scale:1.0)
 			}
 			//imageViewCell.logoImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DALoginRegisterVC.imageTapped(_:))))
 			imageViewCell.onImageChangedFieldTextChanged = { text in
@@ -131,7 +138,7 @@ extension DALoginRegisterVC:UITableViewDataSource {
 		}
 	}
 	func btnPressed(sender:UIButton) {
-		let (status,message,count,user) = daloginRegisterModelObject.submitBtnPressed(tableViewArr,screenType: screenType)
+		let (status,message,count,user) = daloginRegisterModelObject.submitBtnPressed(tableViewArr,screenType: screenType,userDic: userDic)
 		if  status {
 			print("VAlidationPass::\(user)")
 			let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -158,7 +165,7 @@ extension DALoginRegisterVC:UITableViewDataSource {
 		} else {
 			screenType = 1
 		}
-		tableViewArr = daloginRegisterModelObject.createTableDic(screenType)
+		tableViewArr = daloginRegisterModelObject.createTableDic(screenType,userDic: nil)
 		UIView.setAnimationsEnabled(false)
 		tableview.reloadData()
 		UIView.setAnimationsEnabled(true)

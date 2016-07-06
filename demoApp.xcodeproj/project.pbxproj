@@ -27,6 +27,7 @@
 		3A74B6BB1D28041F002916AA /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A74B6AE1D27FE3E002916AA /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A74B6BC1D28041F002916AA /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A74B6AF1D27FE3E002916AA /* RealmSwift.framework */; };
 		3A74B6BD1D28041F002916AA /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A74B6AF1D27FE3E002916AA /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3A9870E31D2D6CF70081E0DE /* MoreTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9870E21D2D6CF70081E0DE /* MoreTabVC.swift */; };
 		3AA1EBCC1D2A7E1D0037415E /* DAUserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1EBCB1D2A7E1D0037415E /* DAUserListVC.swift */; };
 		3AA1EBCE1D2A7E810037415E /* DAUserListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1EBCD1D2A7E810037415E /* DAUserListCVC.swift */; };
 		B531D8712282C7CD497D1F1E /* Pods_demoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 445554AB6140778D80193041 /* Pods_demoApp.framework */; };
@@ -67,6 +68,7 @@
 		3A74B6AF1D27FE3E002916AA /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		3A74B6B61D27FF6A002916AA /* DAUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAUserModel.swift; sourceTree = "<group>"; };
 		3A74B6B81D2800AB002916AA /* DARealmUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DARealmUserModel.swift; sourceTree = "<group>"; };
+		3A9870E21D2D6CF70081E0DE /* MoreTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTabVC.swift; sourceTree = "<group>"; };
 		3AA1EBCB1D2A7E1D0037415E /* DAUserListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAUserListVC.swift; sourceTree = "<group>"; };
 		3AA1EBCD1D2A7E810037415E /* DAUserListCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAUserListCVC.swift; sourceTree = "<group>"; };
 		445554AB6140778D80193041 /* Pods_demoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 				3A6C9AA41D2191890032E078 /* Cell */,
 				3A6C9A9F1D218ABB0032E078 /* DALoginRegisterVC.swift */,
 				3AA1EBCB1D2A7E1D0037415E /* DAUserListVC.swift */,
+				3A9870E21D2D6CF70081E0DE /* MoreTabVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				3A74B6B91D2800AB002916AA /* DARealmUserModel.swift in Sources */,
 				3A0E36BD1D26AB1400611F8A /* DALoginRegisterViewModel.swift in Sources */,
 				3AA1EBCC1D2A7E1D0037415E /* DAUserListVC.swift in Sources */,
+				3A9870E31D2D6CF70081E0DE /* MoreTabVC.swift in Sources */,
 				3A6C9AA11D218ABB0032E078 /* DALoginRegisterVC.swift in Sources */,
 				3A74B6A31D27C637002916AA /* DACommonMethod.swift in Sources */,
 				3A6C9AA61D21921C0032E078 /* DATextFieldTVC.swift in Sources */,
